@@ -82,8 +82,9 @@ function printQuote() {
         if (randomQuote.citation) {
             html += `<span class="citation">${randomQuote.citation}</span>`;
         }
-        if (randomQuote.year)
+        if (randomQuote.year) {
             html += `<span class="year">${randomQuote.year}</span>`;
+        }
         html += "</p>";
 
     // Set the HTML
