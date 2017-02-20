@@ -8,25 +8,31 @@ document.getElementById('loadQuote').addEventListener("click", printQuote, false
 let quotes = [
     {
         quote: "If your hate could be turned into electricity, it would light up the whole world.",
-        source: "Nikola Tesla"
+        source: "Nikola Tesla",
+        tags: ["science", "Tesla", "electricity"]
     },
     {
         quote: "You can spend minutes, hours, days, weeks, or even months over-analyzing a situation; trying to put the pieces together, justifying what could've, would've happened... or you can just leave the pieces on the floor and move the fuck on.",
-        source: "Tupac Shakur"
+        source: "Tupac Shakur",
+        tags: ["2Pac", "Tupac", "moving on"]
     },
     {
         quote: "In a dark place we find ourselves, and a little more knowledge lights our way.",
         source: "Yoda",
         citation: "Star Wars: Episode III",
-        year: 2005
+        year: 2005,
+        tags: ["Star Wars", "Yoda"]
     },
     {
         quote: "I’m not in this world to live up to your expectations and you’re not in this world to live up to mine.",
-        source: "Bruce Lee"
+        source: "Bruce Lee",
+        tags: ["Bruce Lee", "martial arts", "philosophy"]
     },
     {
         quote: "We cannot solve our problems with the same thinking we used when we created them.",
-        source: "Albert Einstein"
+        source: "Albert Einstein",
+        tags: ["science", "Einstein"]
+
     }
 ];
 
