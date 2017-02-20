@@ -27,11 +27,24 @@ let quotes = [
 
 let shownQuotes = [];
 
+function getRandomColorValue() {
+    return Math.floor(Math.random() * 256);
+}
+
+function getRandomColor() {
+    let red = getRandomColorValue();
+    let green = getRandomColorValue();
+    let blue = getRandomColorValue();
+
+    return `rgb(${red}, ${green}, ${blue})`
+}
+
 function getRandomQuote() {
     if (quotes.length === 0) {
         quotes = shownQuotes;
         shownQuotes = [];
     }
+
     let randomIndex = Math.floor(Math.random() * quotes.length);
     console.log(`Index: ${randomIndex} Length: ${quotes.length}`);
 
@@ -56,4 +69,6 @@ function printQuote() {
         html += "</p>";
 
     document.getElementById("quote-box").innerHTML = html;
+    const body = document.getElementsByTagName("body")[0];
+    body.style = "background-color: " + getRandomColor();
 }
