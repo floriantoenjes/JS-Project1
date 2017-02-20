@@ -23,18 +23,22 @@ let quotes = [
     {
         quote: "I’m not in this world to live up to your expectations and you’re not in this world to live up to mine.",
         source: "Bruce Lee"
+    },
+    {
+        quote: "We cannot solve our problems with the same thinking we used when we created them.",
+        source: "Albert Einstein"
     }
 ];
 
 // Already shown quotes go here
 let shownQuotes = [];
 
-// Generate a random number from 0 to 255;
+// Generate a random number between 0 and 255;
 function getRandomColorValue() {
     return Math.floor(Math.random() * 256);
 }
 
-// Generate a random rgb color value
+// Generate a random RGB color value
 function getRandomColor() {
     let red = getRandomColorValue();
     let green = getRandomColorValue();
@@ -53,7 +57,7 @@ function getRandomQuote() {
 
     let randomIndex = Math.floor(Math.random() * quotes.length);
     let randomQuote = quotes[randomIndex];
-    console.log(`Quote: ${randomQuote}`);
+    console.log(`Quote: ${randomQuote.quote}`);
 
     // Remove the shown quote from the quotes array
     quotes.splice(randomIndex, 1);
@@ -84,4 +88,5 @@ function printQuote() {
     body.style = "background-color: " + getRandomColor();
 }
 
+// Refresh the quote every 30 seconds
 setInterval(printQuote, 30000);
