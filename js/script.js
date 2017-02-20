@@ -4,7 +4,7 @@
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
-const quotes = [
+let quotes = [
     {
         quote: "If your hate could be turned into electricity, it would light up the whole world.",
         source: "Nikola Tesla"
@@ -23,16 +23,29 @@ const quotes = [
         quote: "I’m not in this world to live up to your expectations and you’re not in this world to live up to mine.",
         source: "Bruce Lee"
     }
-]
+];
+
+let shownQuotes = [];
 
 function getRandomQuote() {
+    if (quotes.length === 0) {
+        quotes = shownQuotes;
+        shownQuotes = [];
+    }
     let randomIndex = Math.floor(Math.random() * quotes.length);
-    console.log(`Index: ${randomIndex}`);
-    return quotes[randomIndex];
+    console.log(`Index: ${randomIndex} Length: ${quotes.length}`);
+
+    let randomQuote = quotes[randomIndex];
+
+    quotes.splice(randomIndex, 1);
+    shownQuotes.push(randomQuote);
+
+    return randomQuote;
 }
 
 function printQuote() {
     let randomQuote = getRandomQuote();
+
     let html = `<p class="quote">${randomQuote.quote}</p>`;
         html += `<p class="source">${randomQuote.source}`;
         if (randomQuote.citation) {
